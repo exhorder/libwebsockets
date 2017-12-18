@@ -1783,7 +1783,7 @@ lws_context_destroy2(struct lws_context *context)
 	lws_check_deferred_free(context, 1);
 
 #if LWS_MAX_SMP > 1
-	pthread_mutex_destroy(&context->lock, NULL);
+       pthread_mutex_destroy(&context->lock);
 #endif
 
 	lws_free(context);
